@@ -4,6 +4,7 @@
 #include <list>
 #include <unordered_map>
 
+//双向链表的结点, 作为页面
 struct Node 
 {
     Node(int k, int v)
@@ -53,9 +54,9 @@ public:
         }   
     }
 private:
-    int capacity;
-    std::list<Node> cacheList;
-    std::unordered_map<int, std::list<Node>::iterator> cacheMap;
+    int capacity;   //规定一个链表大小
+    std::list<Node> cacheList;  //双向链表
+    std::unordered_map<int, std::list<Node>::iterator> cacheMap;//存储链表结点和结点位置对应关系,实现O1时间复杂度
 };
 
 
